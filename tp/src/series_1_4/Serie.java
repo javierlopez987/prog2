@@ -19,4 +19,12 @@ public class Serie {
 	public int getCantTemporadas () {
 		return temporadas.size();
 	}
+	
+	public int getCantVistos() {
+		int cantVistos = 0;
+		for(Temporada t: temporadas) { // forEach
+			cantVistos += t.getEpisodiosVistos_2();
+		}
+		return cantVistos;
+	}
 }
