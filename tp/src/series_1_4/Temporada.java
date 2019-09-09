@@ -52,4 +52,8 @@ public class Temporada {
 			}
 		return sumaCalif / episodiosCalificados;
 	}
+	
+	public boolean existeEpisodio(Episodio x) {
+			return episodios.contains(x);
+	}
 }

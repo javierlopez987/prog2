@@ -13,6 +13,7 @@ public class CentroStreaming {
 		t1.addEpisodio(e1);
 		t1.addEpisodio(e2);
 		t1.addEpisodio(e3);
+		System.out.println(t1.existeEpisodio(e1));
 		
 		System.out.println(s1.getCantTemporadas());
 	}
