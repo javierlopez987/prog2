@@ -8,6 +8,14 @@ public class Serie {
 	String genero;
 	ArrayList<Temporada> temporadas; 
 	
+	public Serie () {
+		titulo = "Desconocido";
+		description = "Desconocido";
+		creador = "Desconocido";
+		genero = "Indeterminado";
+		temporadas = new ArrayList<Temporada>();
+	}
+	
 	public Serie (String t, String d, String c, String g) {
 		temporadas = new ArrayList<Temporada>();
 	}
