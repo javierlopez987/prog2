@@ -9,7 +9,7 @@ public class Empleado {
 
 	public Empleado (String n,int dni,double s) {
 		nombre=n;
-		dni=dni;
+		this.dni=dni;
 		sueldo=s;
 		
 	}
