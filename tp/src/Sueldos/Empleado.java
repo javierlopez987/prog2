@@ -1,0 +1,17 @@
+package Sueldos;
+
+public class Empleado {
+	 String nombre;
+	 int DNI;
+	 double sueldo;
+	 
+	 public Empleado(String n, int d, double s) {
+		 nombre=n;
+		 DNI=d;
+		 sueldo=s;
+	 }
+	 
+	 public double getSueldo() {
+		 return sueldo;
+	 }
+}
