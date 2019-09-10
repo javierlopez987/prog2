@@ -22,7 +22,7 @@ public class Contingente {
 		p3.setViajando();
 		p4.setConcentracion();
 		
-		for(Persona p: personas) {
+		for(Persona p: personas){
 			p.isDisponible();
 		}
 
