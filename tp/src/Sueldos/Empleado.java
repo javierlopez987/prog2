@@ -14,4 +14,8 @@ public class Empleado {
 	 public double getSueldo() {
 		 return sueldo;
 	 }
+	 
+	 public String toString() {
+		 return "Nombre: "+ this.nombre+ "Sueldo: "+ this.sueldo;
+	 }
 }

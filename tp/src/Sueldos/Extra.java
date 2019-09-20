@@ -15,4 +15,5 @@ public class Extra extends Empleado {
 		return super.getSueldo()+(EXTRA*horas);
 	}
 
+	
 }
