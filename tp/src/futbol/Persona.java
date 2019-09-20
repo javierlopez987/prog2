@@ -24,6 +24,11 @@ public class Persona {
 		estado = "Intederminado";
 	}
 	
+	@Override
+	public String toString() {
+		return this.getApellido() + ". " + this.getRol() + ". Disponible?: " + this.isDisponible();
+	}
+	
 	public void setRolFutbolista() {
 		rol = FUTBOLISTA;
 	}

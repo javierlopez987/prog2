@@ -25,9 +25,8 @@ public class SeleccionFutbol {
 		seleccion.add(f2);
 		seleccion.add(e1);
 		seleccion.add(m1);
-		
 		for(Persona p: seleccion) {
-			System.out.println(p.getApellido() + ". " + p.getRol() + ". Disponible?: " + p.isDisponible());
+			System.out.println(p);
 		}
 	}
 
