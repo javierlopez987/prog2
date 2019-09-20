@@ -1,10 +1,13 @@
 package Practico_4_1_Congreso;
+import java.util.ArrayList;
 
 public class Trabajo {
 
 	String articulo;
 	String resumen;
-	int blabla;
-	boolean loco;
-	String anda_a_saber;
+	ArrayList<Evaluadores>evaluadores;
+
 }
+
+
+
