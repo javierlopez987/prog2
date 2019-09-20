@@ -5,7 +5,13 @@ public class Trabajo {
 
 	String articulo;
 	String resumen;
+
 	ArrayList<Evaluadores>evaluadores;
+
+
 	
 	
 }
+
+
+
