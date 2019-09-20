@@ -5,9 +5,7 @@ public class Integrante {
 	String apellido;
 	int pasaporte;
 	LocalDate nac;
-	String rol;
-	String estado;
-	
+	String pais;
 	
 	
 	public Integrante(String n,String a,int p,LocalDate f){
@@ -15,34 +13,10 @@ public class Integrante {
 		apellido=a;
 		pasaporte=p;
 		nac=f;
-		rol="Indeterminado";
-		estado="Indeterminado";
-		
 	}
 	
 	
-	public void setRolfutbolista() {
-		rol="Futbolista";
-	}
 	
-	public void setRolentrenador() {
-		rol="Entrenador";
-	}
-	
-	public void setRolmasajista() {
-		rol="Masajista";
-	}
-	
-	public void setEstadoViaje() {
-		estado="Viajando";
-	}
-	public void setEstadoconcentra() {
-		estado="Concentracion";
-	}
-	
-	public void setEstadopais() {
-		estado="En pais de origen";
-	}
 	
 	
 	
@@ -86,33 +60,12 @@ public class Integrante {
 	}
 
 
-	public String getRol() {
-		return rol;
-	}
-
-
-	public String getEstado() {
-		return estado;
-	}
-
 
 	public boolean Isdisponible() {
-		if (getEstado()=="En pais de origen"){
+		//if (getEstado()=="En pais de origen"){
 				return true;
 		}
-		else return false;
+		//else return false;
 	}
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-}
+
