@@ -6,7 +6,7 @@ public class Comite {
 	Vector<Trabajo> trabajos;
 	Vector<String> temas_especiales;
 		
-	public Comite () {
+	public Comite() {
 		evaluadores = new Vector<Evaluador>();
 		trabajos = new Vector<Trabajo>();
 		temas_especiales = new Vector<String>();
@@ -33,19 +33,16 @@ public class Comite {
 		return false;
 	}
 	
-	public String getEvaluador(Trabajo t) {
-		for(Evaluador e: evaluadores) {
-			if(e.tiene(t)) {
-				return e.getNombre();
-			}
-		}
-		return null;
+	public void asignarUnTrabajoEvaluador(Trabajo t, Evaluador e) {
+			e.addTrabajo(t);
 	}
 	
-	public void imprimirTrabajos(Evaluador e) {
-		for(Trabajo t: trabajos) {
-			if(e.tiene(t)) {
-				System.out.println(t);
+	public void asignarTrabajosEvaluadores() {
+		for(Evaluador e: evaluadores) {
+			for(Trabajo t: trabajos) {
+				if(e.aptoTrabajo(t)) {
+					e.addTrabajo(t);
+				}
 			}
 		}
 	}
@@ -60,4 +57,34 @@ public class Comite {
 	public int getTrabajosSize() {
 		return trabajos.size();
 	}
+	
+	public void imprimirTrabajos(Evaluador e) {
+		for(Trabajo t: trabajos) {
+			if(e.tiene(t)) {
+				System.out.println(e.getNombre() + ": " + t.getNombre());
+			}
+		}
+	}
+	
+	public void imprimirEvaluador(Trabajo t) {
+		for(Evaluador e: evaluadores) {
+			if(e.tiene(t)) {
+				System.out.println(t.getNombre() + ": " + e.getNombre());
+			}
+		}
+	}
+	
+	public void imprimirCantTrabajos(Evaluador e) {
+		System.out.println(e.getNombre() + ". Cantidad de trabajos: " + e.getCantTrabajos());
+	}
+	
+	public void imprimirExperto(Evaluador e) {
+		if(isExperto(e)) {
+			System.out.println(e.getNombre() + ": Experto.");
+		} else {
+			System.out.println(e.getNombre() + ": Común.");
+		}
+	}
 }
+
+

@@ -35,4 +35,8 @@ public class Evaluador {
 	public boolean tiene(Trabajo t) {
 		return trabajos.contains(t);
 	}
+	
+	public int getCantTrabajos() {
+		return trabajos.size();
+	}
 }

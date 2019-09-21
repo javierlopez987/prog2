@@ -16,10 +16,10 @@ public class Sistema_comite_evaluadores {
 		Evaluador e3 = new Evaluador("Evaluador 3");
 		Evaluador e4 = new Evaluador("Evaluador 4");
 		
-		Trabajo t1 = new Trabajo();
-		Trabajo t2 = new Trabajo();
-		Trabajo t3 = new Poster();
-		Trabajo t4 = new Poster();
+		Trabajo t1 = new Trabajo("Trabajo 1");
+		Trabajo t2 = new Trabajo("Trabajo 2");
+		Trabajo t3 = new Poster("Trabajo 3");
+		Trabajo t4 = new Poster("Trabajo 4");
 		
 		e1.addTema(tema1);
 		e1.addTema(tema2);
@@ -28,10 +28,6 @@ public class Sistema_comite_evaluadores {
 		e3.addTema(especial2);
 		e3.addTema(especial3);
 		e4.addTema(tema2);
-		
-		e1.addTrabajo(t1);
-		e1.addTrabajo(t2);
-		e2.addTrabajo(t3);
 		
 		t1.addKeyword(tema1);
 		t1.addKeyword(tema2);
@@ -54,20 +50,15 @@ public class Sistema_comite_evaluadores {
 		comite.addTemaEspecial(especial2);
 		comite.addTemaEspecial(especial3);
 		
-		System.out.println(e1.getNombre() + ": " + comite.isExperto(e1));
-		System.out.println(e2.getNombre() + ": " + comite.isExperto(e2));
-		System.out.println(e3.getNombre() + ": " + comite.isExperto(e3));
-		System.out.println(e4.getNombre() + ": " + comite.isExperto(e4));
+		comite.asignarUnTrabajoEvaluador(t1, e1);
+		comite.asignarUnTrabajoEvaluador(t2, e1);
+		comite.asignarUnTrabajoEvaluador(t3, e2);
+		comite.asignarUnTrabajoEvaluador(t3, e3);
 		
 		comite.imprimirTrabajos(e1);
-		
-		int i = 0;
-		while(i < comite.getTrabajosSize()) {
-			if(comite.getEvaluador(comite.getTrabajo(i)) != null) {
-				System.out.println(comite.getEvaluador(comite.getTrabajo(i)));
-			}
-			i++;
-		}
+		comite.imprimirEvaluador(t3);
+		comite.imprimirCantTrabajos(e1);
+		comite.imprimirExperto(e2);
 	}
 
 }

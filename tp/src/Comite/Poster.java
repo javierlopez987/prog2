@@ -2,8 +2,8 @@ package Comite;
 
 public class Poster extends Trabajo{
 	
-	public Poster() {
-		super();
+	public Poster(String n) {
+		super(n);
 	}
 	public boolean aptoEvaluador(Evaluador e) {
 		for(String t: keywords) {

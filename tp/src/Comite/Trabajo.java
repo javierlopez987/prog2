@@ -2,10 +2,12 @@ package Comite;
 import java.util.*;
 
 public class Trabajo {
+	String nombre;
 	Vector<String> keywords;
 	Vector<Evaluador> evaluadores;
 	
-	public Trabajo() {
+	public Trabajo(String n) {
+		nombre = n;
 		keywords = new Vector<String>();
 		evaluadores = new Vector<Evaluador>();
 	}
@@ -28,5 +30,9 @@ public class Trabajo {
 			}
 		}
 		return apto;
+	}
+	
+	public String getNombre() {
+		return nombre;
 	}
 }
