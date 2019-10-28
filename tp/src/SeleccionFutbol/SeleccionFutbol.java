@@ -25,10 +25,6 @@ public class SeleccionFutbol {
 		seleccion.add(tecnico1);
 		seleccion.add(tecnico2);
 		seleccion.add(masajista1);
-		
-		for(Integrante e:seleccion) {	
-		
-		}
 	}
 	
 	
