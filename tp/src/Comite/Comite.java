@@ -34,7 +34,9 @@ public class Comite {
 	}
 	
 	public void asignarUnTrabajoEvaluador(Trabajo t, Evaluador e) {
+		if(e.aptoTrabajo(t)) {
 			e.addTrabajo(t);
+		}
 	}
 	
 	public void asignarTrabajosEvaluadores() {
@@ -47,21 +49,19 @@ public class Comite {
 		}
 	}
 	
-	public Trabajo getTrabajo(int i) {
-		if(i < trabajos.size()) {
-			return trabajos.elementAt(i);
-		}
-		return null;
-	}
+	//Obtener lista evaluadores que pueden evaluar un trabajo
 	
-	public int getTrabajosSize() {
-		return trabajos.size();
+
+	public void imprimirTrabajos() {
+		for(Evaluador e:evaluadores) {
+			imprimirTrabajos(e);
+		}
 	}
 	
 	public void imprimirTrabajos(Evaluador e) {
 		for(Trabajo t: trabajos) {
 			if(e.tiene(t)) {
-				System.out.println(e.getNombre() + ": " + t.getNombre());
+				System.out.println(e+": "+t);
 			}
 		}
 	}

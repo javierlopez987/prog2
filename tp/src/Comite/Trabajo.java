@@ -32,7 +32,20 @@ public class Trabajo {
 		return apto;
 	}
 	
+	public boolean aptoEvaluador1(Evaluador e) {
+		for(String t: keywords) {
+			if (!e.conoce(t)) {
+				return false;
+			}
+		}
+		return true;
+	}
+	
 	public String getNombre() {
 		return nombre;
+	}
+	
+	public String toString() {
+		return this.getNombre();
 	}
 }

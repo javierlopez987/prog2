@@ -39,4 +39,9 @@ public class Evaluador {
 	public int getCantTrabajos() {
 		return trabajos.size();
 	}
+
+	@Override
+	public String toString() {
+		return this.getNombre();
+	}
 }
