@@ -1,13 +1,15 @@
 package sistemaElectoral;
 
 import java.time.LocalDate;
+import java.util.HashSet;
+import java.util.Set;
 
 public class Voto extends ESE {
 	Candidato voto;
-	int dni;
+	Integer dni;
 	LocalDate fecha;
 	
-	public Voto(int dni) {
+	public Voto(Integer dni) {
 		this.dni = dni;
 		voto = null;
 		fecha = null;
@@ -17,13 +19,9 @@ public class Voto extends ESE {
 		return 1;
 	}
 	
-	public int contarAptosAVotar() {
-		return 1;
-	}
-	
 	public boolean equals(Object o) {
-		Voto voto = (Voto) o;
-		return this.getDni() == voto.getDni();
+		Voto aux = (Voto) o;
+		return this.getDni() == aux.getDni();
 	}
 	
 	public void votar(Candidato x) {
@@ -35,11 +33,20 @@ public class Voto extends ESE {
 		return voto;
 	}
 
-	public int getDni() {
+	public Integer getDni() {
 		return dni;
 	}
 
 	public LocalDate getFecha() {
 		return fecha;
+	}
+
+	@Override
+	public Set<ESE> find(Condicion c) {
+		Set<ESE> result = new HashSet<ESE>();
+		if(c.cumple(this)) {
+			result.add(this);
+		}
+		return result;
 	}
 }

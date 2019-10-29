@@ -6,9 +6,8 @@ public class SistemaElectoral {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		Set<ESE> padron1 = new HashSet<ESE>();
-		Set<ESE> padron2 = new HashSet<ESE>();
-		Set<ESE> distritoPadron = new HashSet<ESE>();
+		Mesa mesa1 = new Mesa();
+		Mesa mesa2 = new Mesa();
 		
 		Candidato candidato1 = new Candidato("alberto", "fernandez", "frente de todos", "NN");
 		Candidato candidato2 = new Candidato("mauricio", "macri", "cambiemos", "nn");
@@ -26,20 +25,19 @@ public class SistemaElectoral {
 		Voto votante9 = new Voto(9);
 		Voto votante10 = new Voto(10);
 		
-		padron1.add(votante1);
-		padron1.add(votante2);
-		padron1.add(votante3);
-		padron1.add(votante4);
-		padron1.add(votante5);
-		padron1.add(votante6);
-		padron1.add(votante7);
-		padron1.add(votante7);
-		padron1.add(votante8);
-		padron2.add(votante9);
-		padron2.add(votante10);
+		mesa1.add(votante1);
+		mesa1.add(votante2);
+		mesa1.add(votante3);
+		mesa1.add(votante4);
+		mesa1.add(votante5);
+		mesa1.add(votante6);
+		mesa1.add(votante7);
+		mesa2.add(votante6);
+		mesa2.add(votante7);
+		mesa2.add(votante8);
+		mesa2.add(votante9);
+		mesa2.add(votante10);
 		
-		Mesa escuela = new Mesa(padron1);
-		Mesa escuela2 = new Mesa(padron2);
 		votante1.votar(candidato1);
 		votante2.votar(candidato2);
 		votante3.votar(candidato3);
@@ -50,19 +48,13 @@ public class SistemaElectoral {
 		votante8.votar(candidato3);
 		votante9.votar(candidato3);
 		votante10.votar(candidato4);
+		Cdni c1 = new Cdni(1);
+		Set<ESE> votante = mesa1.find(c1);
+		Voto v1 = (Voto) votante;
+		v1.votar(candidato1);
 		
-		escuela.registrarVoto(votante1);
-		escuela.registrarVoto(votante2);
-		escuela.registrarVoto(votante3);
-		escuela2.registrarVoto(votante4);
-		
-		distritoPadron.add(escuela);
-		distritoPadron.add(escuela2);
-		Mesa distrito = new Mesa(distritoPadron);
-		
-		System.out.println(escuela.contarAptosAVotar());
-		System.out.println(escuela2.contarAptosAVotar());
-		System.out.println(distrito.contarAptosAVotar());
+		System.out.println(mesa1.contarVoto());
+		System.out.println(mesa2.contarVoto());
 		
 		System.out.println(candidato1);
 		System.out.println(candidato2);
