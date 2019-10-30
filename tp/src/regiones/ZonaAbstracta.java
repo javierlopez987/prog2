@@ -20,4 +20,6 @@ public abstract class ZonaAbstracta {
 	public abstract int getGastos();
 	
 	public abstract int getIngresos();
+	
+	public abstract List<Ciudad> buscar(Filtro f);
 }

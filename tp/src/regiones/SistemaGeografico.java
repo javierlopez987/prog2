@@ -40,6 +40,14 @@ public class SistemaGeografico {
 		for(Ciudad c: gameOfThrones.getCiudadesDeficit()) {
 			System.out.println("Ciudad con deficit: " + c.getNombre());
 		}
+		
+		Filtro libreName = new NombreFiltro("Pueblo Libre");
+		Filtro dorneName = new NombreFiltro("Reino de Dorne");
+		Filtro libreOrDorne = new OrFiltro(libreName, dorneName);
+		
+		for(Ciudad c: gameOfThrones.buscar(libreOrDorne)) {
+			System.out.println("Ciudad: " + c.getNombre());
+		}
 	}
 
 }

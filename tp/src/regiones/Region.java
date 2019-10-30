@@ -1,6 +1,7 @@
 package regiones;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class Region extends ZonaAbstracta {
@@ -28,6 +29,7 @@ public class Region extends ZonaAbstracta {
 		List<Ciudad> result = new ArrayList<>();
 		for (ZonaAbstracta z: regiones) {
 			result.addAll(z.getCiudadesDeficit());
+			Collections.sort(result);
 		}
 		return result;
 	}
@@ -57,5 +59,13 @@ public class Region extends ZonaAbstracta {
 			suma += z.getIngresos();
 		}
 		return suma;
+	}
+	
+	public List<Ciudad> buscar(Filtro f) {
+		List<Ciudad> result = new ArrayList<>();
+		for(ZonaAbstracta z: regiones) {
+			result.addAll(z.buscar(f));
+		}
+		return result;
 	}
 }
