@@ -1,5 +1,8 @@
 package regiones;
 
+import java.util.Comparator;
+import java.util.List;
+
 public class SistemaGeografico {
 
 	public static void main(String[] args) {
@@ -48,7 +51,13 @@ public class SistemaGeografico {
 		Filtro libreOrDorne = new OrFiltro(libreName, dorneName);
 		Filtro threeOr = new OrFiltro(libreOrDorne, norteFilter);
 		
-		for(Ciudad c: gameOfThrones.buscar(threeOr)) {
+		((Ciudad) dorne).setIngresos(200000000);
+		
+		Comparator<Ciudad> c1 = new ComparaIngresos();
+		
+		List<Ciudad> listaOrd = ((Region) gameOfThrones).ordenarAsc(gameOfThrones.buscar(threeOr), c1);
+		
+		for(Ciudad c: listaOrd) {
 			System.out.println("Ciudad: " + c.getNombre());
 		}
 	}

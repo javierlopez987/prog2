@@ -38,7 +38,7 @@ public class Territorio extends ElemMundo {
 	public ArrayList<Comarca> filtro(Filtro f,Comparator<Comarca> c){
 		ArrayList<Comarca>lista= new ArrayList<Comarca>();
 		for(ElemMundo e: comarcas) {
-			lista.addAll(e.filtro(f));
+			lista.addAll(e.filtro(f, c));
 			
 		}
 		

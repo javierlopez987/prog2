@@ -2,6 +2,7 @@ package regiones;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 public class Region extends ZonaAbstracta {
@@ -57,8 +58,6 @@ public class Region extends ZonaAbstracta {
 		for (ZonaAbstracta z: regiones) {
 			result.addAll(z.getCiudadesDeficit());
 		}
-		Collections.sort(result);
-		Collections.reverse(result);
 		return result;
 	}
 	
@@ -67,7 +66,12 @@ public class Region extends ZonaAbstracta {
 		for(ZonaAbstracta z: regiones) {
 			result.addAll(z.buscar(f));
 		}
-		Collections.sort(result);
+		return result;
+	}
+	
+	public List<Ciudad> ordenarAsc(List<Ciudad> lista, Comparator<Ciudad> c) {
+		List<Ciudad> result = lista;
+		Collections.sort(result, c);
 		return result;
 	}
 }
