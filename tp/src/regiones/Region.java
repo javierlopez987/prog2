@@ -5,7 +5,7 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
-public class Region extends ZonaAbstracta {
+public class Region extends ZonaAbstracta{
 	List<ZonaAbstracta> regiones;
 	
 	public Region(String nombre) {
@@ -69,9 +69,29 @@ public class Region extends ZonaAbstracta {
 		return result;
 	}
 	
+	public List<Ciudad> ordenar(List<Ciudad> lista) {
+		List<Ciudad> result = lista;
+		Collections.sort(result);
+		return result;
+	}
+	
 	public List<Ciudad> ordenarAsc(List<Ciudad> lista, Comparator<Ciudad> c) {
 		List<Ciudad> result = lista;
 		Collections.sort(result, c);
 		return result;
+	}
+	
+	public List<Ciudad> ordenarDesc(List<Ciudad> lista, Comparator<Ciudad> c) {
+		List<Ciudad> result = lista;
+		Collections.sort(result, Collections.reverseOrder(c));
+		return result;
+	}
+
+	public String toString() {
+		String pantalla = "";
+		for(ZonaAbstracta z: regiones) {
+			pantalla += z.toString();
+		}
+		return pantalla;
 	}
 }

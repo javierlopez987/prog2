@@ -59,4 +59,11 @@ public class Ciudad extends ZonaAbstracta implements Comparable<Ciudad>{
 		}
 		return result;
 	}
+
+	@Override
+	public String toString() {
+		return "\n" + nombre + " [habitantes=" + habitantes + ", gastos=" + gastos + ", ingresos=" + ingresos + "]";
+	}
+	
+	
 }

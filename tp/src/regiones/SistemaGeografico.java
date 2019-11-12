@@ -51,15 +51,21 @@ public class SistemaGeografico {
 		Filtro libreOrDorne = new OrFiltro(libreName, dorneName);
 		Filtro threeOr = new OrFiltro(libreOrDorne, norteFilter);
 		
-		((Ciudad) dorne).setIngresos(200000000);
+		((Ciudad) dorne).setIngresos(2000000);
+		
+		List<Ciudad> lista = gameOfThrones.buscar(threeOr);
 		
 		Comparator<Ciudad> c1 = new ComparaIngresos();
+		List<Ciudad> listaOrd = ((Region) gameOfThrones).ordenarAsc(lista, c1);
+		System.out.println(listaOrd);
 		
-		List<Ciudad> listaOrd = ((Region) gameOfThrones).ordenarAsc(gameOfThrones.buscar(threeOr), c1);
+		Comparator<Ciudad> c2 = new ComparaNombres();
+		List<Ciudad> listaOrdName = ((Region) gameOfThrones).ordenarAsc(lista, c2);
+		System.out.println(listaOrdName);
+		listaOrdName = ((Region) gameOfThrones).ordenarDesc(lista, c2);
+		System.out.println(listaOrdName);
 		
-		for(Ciudad c: listaOrd) {
-			System.out.println("Ciudad: " + c.getNombre());
-		}
+		System.out.println(gameOfThrones);
 	}
 
 }
