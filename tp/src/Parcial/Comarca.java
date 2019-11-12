@@ -1,7 +1,8 @@
 package Parcial;
 import java.util.ArrayList;
+import java.util.Comparator;
 
-public class Comarca extends ElemMundo {
+public class Comarca extends ElemMundo implements Comparable<Comarca> {
 	String nombre;
 	int habitantes;
 	double sup;
@@ -13,6 +14,9 @@ public class Comarca extends ElemMundo {
 		sup=s;
 		ingresos=ing;
 		
+	}
+	public int compareTo(Comarca c) {
+		return nombre.compareTo(c.getNombre());
 	}
 
 	public String getNombre() {
@@ -47,7 +51,7 @@ public class Comarca extends ElemMundo {
 		this.ingresos = ingresos;
 	}
 	
-	public ArrayList<Comarca>filtro(Filtro f){
+	public ArrayList<Comarca>filtro(Filtro f, Comparator<Comarca>c){
 		ArrayList<Comarca>lista=new ArrayList<Comarca>();
 		if(f.Cumple(this)) {
 			lista.add(this);
