@@ -1,5 +1,7 @@
 package Parcial;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 
 public class Territorio extends ElemMundo {
 	String nombre;
@@ -33,14 +35,18 @@ public class Territorio extends ElemMundo {
 		}
 		return suma;
 	}
-	public ArrayList<Comarca> filtro(Filtro f){
+	public ArrayList<Comarca> filtro(Filtro f,Comparator<Comarca> c){
 		ArrayList<Comarca>lista= new ArrayList<Comarca>();
 		for(ElemMundo e: comarcas) {
 			lista.addAll(e.filtro(f));
 			
 		}
+		
+		Collections.sort(lista,c);
 		return lista;
 	}
+
+	
 			
 }
 
