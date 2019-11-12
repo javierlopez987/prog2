@@ -7,8 +7,11 @@ public class Comarca extends ElemMundo {
 	double sup;
 	double ingresos;
 	
-	public Comarca(String n) {
+	public Comarca(String n,int hab,double s, double ing) {
 		nombre=n;
+		habitantes=hab;
+		sup=s;
+		ingresos=ing;
 		
 	}
 
