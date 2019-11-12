@@ -25,16 +25,6 @@ public class Region extends ZonaAbstracta {
 	}
 
 	@Override
-	public List<Ciudad> getCiudadesDeficit() {
-		List<Ciudad> result = new ArrayList<>();
-		for (ZonaAbstracta z: regiones) {
-			result.addAll(z.getCiudadesDeficit());
-			Collections.sort(result);
-		}
-		return result;
-	}
-
-	@Override
 	public int getHabitantes() {
 		int suma = 0;
 		for(ZonaAbstracta z: regiones) {
@@ -61,11 +51,23 @@ public class Region extends ZonaAbstracta {
 		return suma;
 	}
 	
+	@Override
+	public List<Ciudad> getCiudadesDeficit() {
+		List<Ciudad> result = new ArrayList<>();
+		for (ZonaAbstracta z: regiones) {
+			result.addAll(z.getCiudadesDeficit());
+		}
+		Collections.sort(result);
+		Collections.reverse(result);
+		return result;
+	}
+	
 	public List<Ciudad> buscar(Filtro f) {
 		List<Ciudad> result = new ArrayList<>();
 		for(ZonaAbstracta z: regiones) {
 			result.addAll(z.buscar(f));
 		}
+		Collections.sort(result);
 		return result;
 	}
 }
