@@ -6,7 +6,7 @@ public abstract class Envio {
 	public Envio(int t) {
 		traking = t;
 	}
-
+	
 	public int getTraking() {
 		return traking;
 	}

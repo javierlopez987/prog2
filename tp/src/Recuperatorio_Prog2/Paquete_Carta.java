@@ -23,6 +23,12 @@ boolean retira;
 		this.remitente = remitente;
 	}
 
+	@Override
+	public String toString() {
+		return "Paquete_Carta [remitente=" + remitente.getNombre() + ", destinatario=" + destinatario.getNombre() + ", peso=" + peso
+				+ ", retira=" + retira +", traking="+ traking + "]";
+	}
+
 	public Direccion getDestinatario() {
 		return destinatario;
 	}

@@ -12,11 +12,18 @@ public class Combo extends Envio {
 		acepta=null;
 	}
 	
-	public void addElmens(Envio e) {
-		if(acepta.cumple(e)) {
-			elmens.add(e);
-			e.setTraking(this.traking);
+	public void addElmens(Paquete_Carta pc) {
+		if(acepta.cumple(pc)) {
+			elmens.add(pc);
+			pc.setTraking(this.traking);
 		}
+	}
+	
+
+
+	@Override
+	public String toString() {
+		return "elmens=" + elmens +", traking="+ traking;
 	}
 
 	public Criterio getAcepta() {
