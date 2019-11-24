@@ -1,5 +1,6 @@
 package Parcial;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Comparator;
 
 public class Comarca extends ElemMundo implements Comparable<Comarca> {
@@ -50,6 +51,10 @@ public class Comarca extends ElemMundo implements Comparable<Comarca> {
 	public void setIngresos(double ingresos) {
 		this.ingresos = ingresos;
 	}
+	public String toString() {
+		return "Comarca [nombre=" + nombre + ", habitantes=" + habitantes + ", sup=" + sup + ", ingresos=" + ingresos
+				+ "]";
+	}
 	
 	public ArrayList<Comarca>filtro(Filtro f, Comparator<Comarca>c){
 		ArrayList<Comarca>lista=new ArrayList<Comarca>();
@@ -57,6 +62,7 @@ public class Comarca extends ElemMundo implements Comparable<Comarca> {
 			lista.add(this);
 			
 		}
+		Collections.sort(lista);
 		return lista;
 	}
 	
