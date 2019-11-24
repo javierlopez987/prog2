@@ -42,6 +42,13 @@ public class Combo extends Envio {
 		this.elmens = elmens;
 	}
 	
+	public ArrayList<Paquete_Carta> Criterio (Criterio c){
+		ArrayList<Paquete_Carta>lista= new ArrayList<Paquete_Carta>();
+		for(Envio e: elmens) {
+			lista.addAll(e.Criterio(c));
+		}
+		return lista;
+	}
 	
 
 }

@@ -1,5 +1,7 @@
 package Recuperatorio_Prog2;
 
+import java.util.ArrayList;
+
 public class Paquete_Carta extends Envio {
 		
 Direccion remitente;
@@ -51,6 +53,13 @@ boolean retira;
 
 	public void setRetira(boolean retira) {
 		this.retira = retira;
+	}
+	public ArrayList<Paquete_Carta> Criterio (Criterio c){
+		ArrayList<Paquete_Carta>lista= new ArrayList<Paquete_Carta>();
+		if (c.cumple(this)){
+			lista.add(this);
+		}
+		return lista;
 	}
 	
 			
