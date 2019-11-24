@@ -39,6 +39,10 @@ public class Ciudad extends ZonaAbstracta implements Comparable<Ciudad>{
 		this.ingresos = ingresos;
 	}
 
+	public int compareTo(Ciudad otra) {
+		return this.getNombre().compareTo(otra.getNombre());
+	}
+	
 	@Override
 	public List<Ciudad> getCiudadesDeficit() {
 		List<Ciudad> result = new ArrayList<>();
@@ -46,10 +50,6 @@ public class Ciudad extends ZonaAbstracta implements Comparable<Ciudad>{
 			result.add(this);
 		}
 		return result;
-	}
-	
-	public int compareTo(Ciudad otra) {
-		return this.getNombre().compareTo(otra.getNombre());
 	}
 	
 	public List<Ciudad> buscar(Filtro f) {

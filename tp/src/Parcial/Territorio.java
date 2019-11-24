@@ -6,21 +6,25 @@ import java.util.Comparator;
 public class Territorio extends ElemMundo {
 	String nombre;
 	ArrayList<ElemMundo>comarcas;
-			
-		public Territorio(String n) {
-			nombre=n;
-			comarcas=new ArrayList<ElemMundo>();
-		}
-		
+
+	public Territorio(String n) {
+		nombre=n;
+		comarcas=new ArrayList<ElemMundo>();
+	}
+	
+	public void addComarca(ElemMundo c) {
+		comarcas.add(c);
+	}
+
 	public int getHabitantes() {
 		int suma=0;
 		for(ElemMundo e:comarcas) {
 			suma+=e.getHabitantes();
-			
+
 		}
 		return suma;
 	}
-	
+
 	public double getSup() {
 		double suma=0;
 		for(ElemMundo e: comarcas) {
@@ -36,22 +40,17 @@ public class Territorio extends ElemMundo {
 		return suma;
 	}
 	
-	public void addComarca(ElemMundo e) {
-		comarcas.add(e);
-	}
-	
 	public ArrayList<Comarca> filtro(Filtro f,Comparator<Comarca> c){
 		ArrayList<Comarca>lista= new ArrayList<Comarca>();
 		for(ElemMundo e: comarcas) {
 			lista.addAll(e.filtro(f,c));
-			
 		}
-		
 		Collections.sort(lista,c);
+		//Collections.reverse(lista);
 		return lista;
 	}
 
-	
-			
+
+
 }
 

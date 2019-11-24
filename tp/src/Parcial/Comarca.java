@@ -20,6 +20,11 @@ public class Comarca extends ElemMundo implements Comparable<Comarca> {
 		return nombre.compareTo(c.getNombre());
 	}
 
+	@Override
+	public String toString() {
+		return "Comarca [nombre=" + nombre + ", habitantes=" + habitantes + ", sup=" + sup + ", ingresos=" + ingresos
+				+ "]";
+	}
 	public String getNombre() {
 		return nombre;
 	}
