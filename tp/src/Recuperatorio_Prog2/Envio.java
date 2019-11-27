@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 public abstract class Envio {
 	int traking;
+	public abstract ArrayList<Paquete_Carta> Criterio (Criterio c);
 	
 	public Envio(int t) {
 		traking = t;
@@ -21,5 +22,6 @@ public abstract class Envio {
 	public void setTraking(int traking) {
 		this.traking = traking;
 	}
+	
 
 }

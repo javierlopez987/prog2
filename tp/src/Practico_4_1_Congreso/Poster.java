@@ -3,8 +3,8 @@ package Practico_4_1_Congreso;
 public class Poster extends Trabajo {
 
 
-	public Poster() {
-		super();
+	public Poster(String n) {
+		super(n);
 	}
 	
 	public boolean AptoEvaluador(EvaluadorB e) {

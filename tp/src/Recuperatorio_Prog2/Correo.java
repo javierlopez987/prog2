@@ -22,7 +22,7 @@ public class Correo {
 		Combo postal= new Combo(8);
 		Combo empresarial= new Combo(9);
 		Combo servicios= new Combo(10);
-		System.out.println(especial);
+		//System.out.println(especial);
 		
 		Criterio peso= new CriterioPeso(300);
 		Criterio ciudad= new CriterioCiudad("Tandil");
@@ -33,8 +33,9 @@ public class Correo {
 		servicios.setAcepta(peso);
 		
 		postal.addElmens(carta);
-		empresarial.addElmens(paquete);
+		postal.addElmens(especial);
 		servicios.addElmens(especial);
+<<<<<<< HEAD
 		servicios.addElmens(paquete);
 		
 		Combo empresa=new Combo(20);
@@ -45,6 +46,11 @@ public class Correo {
 		System.out.println(empresa.listar(peso));
 		
 		System.out.println(empresarial);
+=======
+		postal.addElmens(paquete);
+		postal.Criterio(ciudad);
+		System.out.println(postal.Criterio(ciudad));
+>>>>>>> 9de02b70471dd64389518366e962ad9956da2ac7
 
 	}
 

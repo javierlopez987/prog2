@@ -39,13 +39,12 @@ public class Territorio extends ElemMundo {
 		}
 		return suma;
 	}
+	
 	public ArrayList<Comarca> filtro(Filtro f,Comparator<Comarca> c){
 		ArrayList<Comarca>lista= new ArrayList<Comarca>();
 		for(ElemMundo e: comarcas) {
 			lista.addAll(e.filtro(f,c));
-
 		}
-
 		Collections.sort(lista,c);
 		//Collections.reverse(lista);
 		return lista;

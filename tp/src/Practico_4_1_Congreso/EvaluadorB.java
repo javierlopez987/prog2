@@ -12,6 +12,10 @@ public class EvaluadorB {
 			trabajos=new ArrayList<Trabajo>();
 			
 		}
+		
+		public String getNombre() {
+			return nombre;
+		}
 
 		public boolean conoce(String t) {
 			return temas.contains(t);
@@ -22,9 +26,20 @@ public class EvaluadorB {
 		}
 
 		
-		public void addTema(String t) {
-			temas.add(t);
+		public void addTema(String tema) {
+			temas.add(tema);
+		}
+
+		public void addTrabajo(Trabajo t) {
+			trabajos.add(t);
 		}
 		
+		public boolean tiene(Trabajo t) {
+			return trabajos.contains(t);
+		}
+		
+		public int getCantTrabajos() {
+			return trabajos.size();
+		}
 		
 }
