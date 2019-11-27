@@ -6,8 +6,8 @@ String nombre;
 		nombre=n;
 	}
 	@Override
-	public boolean cumple(Paquete_Carta pc) {
-		return nombre.equals(pc.getRemitente().getNombre());
+	public boolean cumple(Envio e) {
+		return nombre.equals(e.getRemitente().getNombre());
 	}
 
 }

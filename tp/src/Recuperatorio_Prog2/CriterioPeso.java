@@ -8,8 +8,8 @@ public CriterioPeso(double p) {
 				peso=p;
 			}
 			
-			public boolean cumple(Paquete_Carta pc) {
-				return pc.getPeso()<=peso;
+			public boolean cumple(Envio e) {
+				return e.getPeso()<=peso;
 				
 			}
 

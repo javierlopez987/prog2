@@ -37,6 +37,13 @@ public class Correo {
 		servicios.addElmens(especial);
 		servicios.addElmens(paquete);
 		
+		Combo empresa=new Combo(20);
+		empresa.addElmens(postal);
+		empresa.addElmens(servicios);
+		empresa.addElmens(empresarial);
+		
+		System.out.println(empresa.listar(peso));
+		
 		System.out.println(empresarial);
 
 	}

@@ -11,11 +11,44 @@ public class Combo extends Envio {
 		elmens=new ArrayList<>();
 		acepta=null;
 	}
+	public Direccion getDestinatario() {
+		Direccion d=null;
+		for(Envio e: elmens) {
+			d=e.getDestinatario();
+		}
+		return d;
+	}
+	public Direccion getRemitente() {
+		Direccion r=null;
+		for(Envio e: elmens) {
+			r=e.getRemitente();
+		}
+		return r;
+	}
+	public double getPeso() {
+		double suma=0;
+		for(Envio e: elmens) {
+			suma+=e.getPeso();
+		}
+		return suma;
+	}
+	public ArrayList<Envio>listar(Criterio c){
+		ArrayList<Envio>lista=new ArrayList<>();
+		for(Envio e:elmens) {
+			if(c.cumple(e)) {
+				lista.addAll(e.listar(c));
+			}
+		}
+		return lista;
+	}
 	
-	public void addElmens(Paquete_Carta pc) {
-		if(acepta.cumple(pc)) {
-			elmens.add(pc);
-			pc.setTraking(this.traking);
+	public void addElmens(Envio e) {
+		for(int i=0;i<e.getElmens().size();i++) {
+			e.addElmens(e);
+			if(acepta.cumple(e.getElmens().get(i))) {
+				
+			e.setTraking(this.traking);
+		}
 		}
 	}
 	

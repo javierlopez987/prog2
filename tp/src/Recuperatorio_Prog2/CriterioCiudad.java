@@ -6,8 +6,8 @@ String ciudad;
 	public CriterioCiudad(String c) {
 		ciudad=c;
 	}
-	public boolean cumple(Paquete_Carta pc) {
-		return ciudad.equals(pc.getDestinatario().getCiudad());
+	public boolean cumple(Envio e) {
+		return ciudad.equals(e.getDestinatario().getCiudad());
 		
 	}
 
