@@ -1,8 +1,11 @@
 package Libreria;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 
-public class GrupoLectura implements Clientela {
+
+public class GrupoLectura extends Clientela {
 	ArrayList<Clientela>clientes;
 	
 	public GrupoLectura() {
@@ -51,6 +54,15 @@ public class GrupoLectura implements Clientela {
 			}
 		}
 		return mayor;
+	}
+	public ArrayList<Cliente>listar(CriterioDescuento cd, Comparator<Cliente> com){
+		ArrayList<Cliente> lista= new ArrayList<Cliente>();
+		for(Clientela c:clientes) {
+			lista.addAll(c.listar(cd,com));
+		}
+			Collections.sort(lista,com);
+			//Collections.reverse(lista);
+		return lista;
 	}
 	
 	

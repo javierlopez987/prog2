@@ -65,7 +65,6 @@ boolean retira;
 	public void setRetira(boolean retira) {
 		this.retira = retira;
 	}
-<<<<<<< HEAD
 
 	@Override
 	public ArrayList<Envio> getElmens() {
@@ -75,16 +74,16 @@ boolean retira;
 
 	@Override
 	public void addElmens(Envio e) {
-		// TODO Auto-generated method stub
-		
-=======
+		e.addElmens(e);
+	}
+	
+
 	public ArrayList<Paquete_Carta> Criterio (Criterio c){
 		ArrayList<Paquete_Carta>lista= new ArrayList<Paquete_Carta>();
 		if (c.cumple(this)){
 			lista.add(this);
 		}
 		return lista;
->>>>>>> 9de02b70471dd64389518366e962ad9956da2ac7
 	}
 	
 			

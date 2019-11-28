@@ -9,8 +9,8 @@ public class CriterioAND implements Criterio{
 		c2=cc2;
 	}
 	
-	public boolean cumple(Paquete_Carta pc) {
-		return c1.cumple(pc) && c2.cumple(pc);
+	public boolean cumple(Envio e) {
+		return c1.cumple(e) && c2.cumple(e);
 	}
 
 }

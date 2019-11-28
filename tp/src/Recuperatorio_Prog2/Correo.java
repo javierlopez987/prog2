@@ -35,22 +35,18 @@ public class Correo {
 		postal.addElmens(carta);
 		postal.addElmens(especial);
 		servicios.addElmens(especial);
-<<<<<<< HEAD
+
 		servicios.addElmens(paquete);
 		
-		Combo empresa=new Combo(20);
-		empresa.addElmens(postal);
-		empresa.addElmens(servicios);
-		empresa.addElmens(empresarial);
 		
-		System.out.println(empresa.listar(peso));
+		
 		
 		System.out.println(empresarial);
-=======
+
 		postal.addElmens(paquete);
 		postal.Criterio(ciudad);
 		System.out.println(postal.Criterio(ciudad));
->>>>>>> 9de02b70471dd64389518366e962ad9956da2ac7
+
 
 	}
 

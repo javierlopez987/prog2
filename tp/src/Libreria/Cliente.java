@@ -1,25 +1,32 @@
 package Libreria;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 
-public class Cliente extends ElemLibro implements Clientela {
-	private ArrayList<ElemLibro>libros;
-	private ArrayList<String>autores;
-	private int antiguedad;
-	private double gastado;
-	private boolean exigente=false;
-	private String nombre;
+public class Cliente extends Clientela implements Comparable<Cliente> {
+	 ArrayList<String>autores;
+	 ArrayList<String>generos;
+	 int antiguedad;
+	 double gastado;
+	 String nombre;
 	
 
-		public Cliente(int ant, double g, boolean exi,String n) {
-			super();
-			this.libros=new ArrayList<ElemLibro>();
+		public Cliente(int ant, double g,String n) {
 			this.autores=new ArrayList<String>();
+			this.generos=new ArrayList<String>();
 			this.antiguedad= ant;
 			this.gastado= g;
-			this.exigente=exi;
 			this.nombre=n;
 			
+		}
+		public ArrayList<String> getGeneros() {
+			return generos;
+		}
+		public void setGeneros(ArrayList<String> generos) {
+			this.generos = generos;
+		}
+		public void addGenero(String s) {
+			this.generos.add(s);
 		}
 		@Override
 		public String toString() {
@@ -31,27 +38,10 @@ public class Cliente extends ElemLibro implements Clientela {
 		public void setNombre(String nombre) {
 			this.nombre = nombre;
 		}
-		public boolean isExigente() {
-			return exigente;
-		}
-		
-		public void setExigente(boolean exigente) {
-			this.exigente = exigente;
-		}
 		public void addAutor(String s){
 			this.autores.add(s);
 		}
 
-		public int getLibros() {
-			return libros.size();
-		}
-		public void comprarLibro(Libro l) {
-			this.libros.add(l);
-		}
-
-		public void setLibros(ArrayList<ElemLibro> libros) {
-			this.libros = libros;
-		}
 
 		public ArrayList<String> getAutores() {
 			return autores;
@@ -86,6 +76,13 @@ public class Cliente extends ElemLibro implements Clientela {
 		}
 		return accept;		
 	}
+	public ArrayList<Cliente>listar(CriterioDescuento cd, Comparator<Cliente> com){
+		ArrayList<Cliente>lista= new ArrayList<Cliente>();
+		if(cd.cumple(this)) {
+			lista.add(this);
+		}
+		return lista;
+	}
 	public boolean autorGusta(Libro l) {
 		boolean accept=false;
 		for(String s:autores) {
@@ -95,19 +92,9 @@ public class Cliente extends ElemLibro implements Clientela {
 		}
 		return accept;
 	}
-	public boolean aceptaExigente(Libro l) {
-		boolean accept=false;
-		int contador=0;
-		for(String s:generos) {
-			if(l.acepta(s)) {
-				contador++;
-			}
-		}
-		if(contador==generos.size()&&(this.autorGusta(l)==true)) {
-			accept=true;
-		}
-		return accept;
-	}
-		
+	@Override
+	public int compareTo(Cliente otro) {
+	return this.nombre.compareTo(otro.getNombre()) ;
 	
+	}
 }

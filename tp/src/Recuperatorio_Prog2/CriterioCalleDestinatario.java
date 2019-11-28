@@ -7,7 +7,7 @@ String calle;
 		calle=ca;
 	}
 	
-	public boolean cumple(Paquete_Carta p) {
+	public boolean cumple(Envio p) {
 		return calle.equals(p.getDestinatario().calle);
 	}
 }

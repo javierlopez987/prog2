@@ -43,14 +43,12 @@ public class Combo extends Envio {
 	}
 	
 	public void addElmens(Envio e) {
-		for(int i=0;i<e.getElmens().size();i++) {
-			e.addElmens(e);
-			if(acepta.cumple(e.getElmens().get(i))) {
-				
-			e.setTraking(this.traking);
-		}
-		}
+			if(acepta.cumple(e)) {
+				elmens.add(e);
+				e.setTraking(this.traking);
+			}
 	}
+				
 	
 
 

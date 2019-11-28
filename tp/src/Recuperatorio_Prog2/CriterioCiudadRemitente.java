@@ -7,7 +7,7 @@ public class CriterioCiudadRemitente implements Criterio{
 		ciudadR=ciu;
 	}
 	
-	public boolean cumple(Paquete_Carta pc) {
+	public boolean cumple(Envio pc) {
 		return ciudadR.equals(pc.getRemitente().ciudad);
 	}
 

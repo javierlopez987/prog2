@@ -2,21 +2,20 @@ package Libreria;
 
 import java.util.ArrayList;
 
-public class Libro extends ElemLibro {
+public class Libro {
 	private String nombre;
 	private String autor;
 	private String resumen;
 	private double precio;
-	
+	private ArrayList<String>generos;
 	
 	
 		public Libro(String n, String a,String r,double pre) {
-			super();
 			this.nombre=n;
 			this.autor=a;
 			this.resumen=r;
 			this.precio=pre;
-			
+			this.generos= new ArrayList<String>();
 		}
 		
 		public double getPrecio() {
@@ -34,10 +33,13 @@ public class Libro extends ElemLibro {
 		public void setGeneros(ArrayList<String> generos) {
 			this.generos = generos;
 		}
+		public void addGenero(String s) {
+			this.generos.add(s);
+		}
 
 		public boolean acepta(String s) {
 			boolean acepta=false;
-			for(String st: this.generos) {
+			for(String st: generos) {
 				if(st.equals(s)) {
 					acepta=true;
 				}
