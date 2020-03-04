@@ -1,5 +1,7 @@
 package expresiones_matematicas;
 
+import java.util.Comparator;
+
 public class Main {
 
 	public static void main(String[] args) {
@@ -40,9 +42,9 @@ public class Main {
 		s1.add(op8);
 		s1.add(op2);
 		
-		Comparador porResultado = new ComparadorResultado();
-		Comparador porCantOperadores = new ComparadorCantOperadores();
-		Comparador porStringExpresion = new ComparadorStringExpresion();
+		Comparator<Elemento> porResultado = new ComparadorResultado();
+		Comparator<Elemento> porCantOperadores = new ComparadorCantOperadores();
+		Comparator<Elemento> porStringExpresion = new ComparadorStringExpresion();
 		
 		for(Elemento e: s1) {
 			System.out.println(e);

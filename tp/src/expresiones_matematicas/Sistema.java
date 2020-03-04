@@ -1,6 +1,7 @@
 package expresiones_matematicas;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.Iterator;
 import java.util.List;
 
@@ -15,7 +16,7 @@ public class Sistema implements Iterable<Elemento>{
 		exp_mat.add(e);
 	}
 	
-	public List<Elemento> listarOrdenado(Comparador c) {
+	public List<Elemento> listarOrdenado(Comparator<Elemento> c) {
 		List<Elemento> resultado = new ArrayList<>();
 		resultado = exp_mat;
 		resultado.sort(c);
