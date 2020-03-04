@@ -24,11 +24,12 @@ public abstract class Expresion extends Elemento {
 		return resultado;
 	}
 	
-	public List<String> getSimbolos() {
+	public List<String> getOperadores() {
 		List<String> resultado = new ArrayList<>();
-		resultado.addAll(e1.getSimbolos());
-		resultado.addAll(e2.getSimbolos());
+		resultado.addAll(e1.getOperadores());
+		resultado.addAll(e2.getOperadores());
 		resultado.add(operador);
 		return resultado;
 	}
+	
 }

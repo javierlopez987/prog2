@@ -20,7 +20,7 @@ public class Numero extends Elemento{
 		return resultado;
 	}
 
-	public List<String> getSimbolos() {
+	public List<String> getOperadores() {
 		// TODO Auto-generated method stub
 		return new ArrayList<>();
 	}
@@ -29,4 +29,5 @@ public class Numero extends Elemento{
 		// TODO Auto-generated method stub
 		return new Float(valor).toString();
 	}
+	
 }
