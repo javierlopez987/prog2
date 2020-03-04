@@ -22,7 +22,7 @@ public class Numero extends Elemento{
 
 	public List<String> getSimbolos() {
 		// TODO Auto-generated method stub
-		return null;
+		return new ArrayList<>();
 	}
 
 	public String toString() {

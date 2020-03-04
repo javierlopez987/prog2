@@ -16,7 +16,6 @@ public class Main {
 		
 		Elemento e101 = new Suma(e2, e3);
 		Elemento op1 = new Suma(e101, e5);
-		System.out.println(op1);
 		
 		Elemento e102 = new Suma(e5, e5);
 		Elemento e103 = new Resta(e3, e1);

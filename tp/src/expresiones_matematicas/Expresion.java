@@ -26,6 +26,8 @@ public abstract class Expresion extends Elemento {
 	
 	public List<String> getSimbolos() {
 		List<String> resultado = new ArrayList<>();
+		resultado.addAll(e1.getSimbolos());
+		resultado.addAll(e2.getSimbolos());
 		resultado.add(operador);
 		return resultado;
 	}
